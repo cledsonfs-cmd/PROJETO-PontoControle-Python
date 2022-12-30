@@ -1,0 +1,393 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'polls/assets/vendor/bootstrap/css/bootstrap.min.css'%}">
+    <link href="{% static 'polls/assets/vendor/fonts/circular-std/style.css" rel="stylesheet'%}">
+    <link rel="stylesheet" href="{% static 'polls/assets/libs/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'polls/assets/vendor/fonts/fontawesome/css/fontawesome-all.css'%}">
+    <link rel="stylesheet" href="{% static 'polls/assets/vendor/charts/chartist-bundle/chartist.css'%}">
+    <link rel="stylesheet" href="{% static 'polls/assets/vendor/charts/morris-bundle/morris.css'%}">
+    <link rel="stylesheet" href="{% static 'polls/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css'%}">
+    <link rel="stylesheet" href="{% static 'polls/assets/vendor/charts/c3charts/c3.css'%}">
+    <link rel="stylesheet" href="{% static 'polls/assets/vendor/fonts/flag-icon-css/flag-icon.min.css'%}">
+    <title>Pontos de Controle</title>
+
+</head>
+
+<body>
+   <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="{% static '../polls/' %}">PONTOS DE CONTROLE</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <!--<li class="nav-item">
+                            <div id="custom-search" class="top-search-bar">
+                                <input class="form-control" type="text" placeholder="Search..">
+                            </div>
+                        </li>-->
+                        <!--<li class="nav-item dropdown notification">
+                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                <li>
+                                    <div class="notification-title"> Notification</div>
+                                    <div class="notification-list">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action active">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="{% static 'polls/assets/images/avatar-2.jpg'%}" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="{% static 'polls/assets/images/avatar-3.jpg'%}" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">John Abraham </span>is now following you
+                                                        <div class="notification-date">2 days ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="{% static 'polls/assets/images/avatar-4.jpg'%}" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="{% static 'polls/assets/images/avatar-5.jpg'%}" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-footer"> <a href="#">View all notifications</a></div>
+                                </li>
+                            </ul>
+                        </li>-->
+                        <!--<li class="nav-item dropdown connection">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
+                                <li class="connection-list">
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'polls/assets/images/github.png'%}" alt="" > <span>Github</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'polls/assets/images/dribbble.png'%}" alt="" > <span>Dribbble</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'polls/assets/images/dropbox.png'%}" alt="" > <span>Dropbox</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'polls/assets/images/bitbucket.png'%}" alt=""> <span>Bitbucket</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'polls/assets/images/mail_chimp.png'%}" alt="" ><span>Mail chimp</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="{% static 'polls/assets/images/slack.png'%}" alt="" > <span>Slack</span></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="conntection-footer"><a href="#">More</a></div>
+                                </li>
+                            </ul>
+                        </li>-->
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{% static 'polls/assets/images/avatar-1.jpg'%}" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">{{ user.first_name }}&nbsp;{{ user.last_name }} </h5>
+                                    <span class="status"></span><span class="ml-2">
+                                    {% if user.is_superuser%}
+                                        Grupo Administrador
+                                    {% else %}
+                                        {% for valor in  user.groups.values %}
+                                            Grupo:&nbsp;{{ valor.name }}&nbsp;&nbsp;
+                                        {% endfor %}
+                                    {% endif %}
+                                    </span>
+                                </div>
+                                <!--<a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>-->
+                                <a class="dropdown-item" href="{% url 'sair' %}"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">{{ titulo }}</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                {% load static tempo_atual %}
+                                {% tempo_atualf %}
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="m-r-10 mdi mdi-settings"></i>MANUTENÇÃO </a>
+                                <div id="submenu-6" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                     {% if tipo == '4' %}
+                                      {% for linha in linhaproducao_list %}
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../globalmanut/4/{{ linha.codigo1 }}"><i class="m-r-10 mdi mdi-table-edit">&nbsp;&nbsp;Alterar Dados - {{ linha.descricao }}</i></a>
+                                        </li>
+                                        {% endfor %}
+                                     {% elif tipo == '5' %}
+                                         {% for setor in setor_list %}
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../globalmanut/5/{{ setor.codigo }}"><i class="m-r-10 mdi mdi-table-edit">&nbsp;&nbsp;{{ setor.nome }}</i></a>
+                                        </li>
+                                        {% endfor %}
+                                     {% elif tipo == '6' %}
+                                         <li class="nav-item">
+                                            <a class="nav-link" href="../../globalmanut/6/{{ setor.codigo }}"><i class="m-r-10 mdi mdi-table-edit">&nbsp;&nbsp;Editar Dados</i></a>
+                                        </li>
+                                     {% else %}
+                                        {% for empresa in empresa_list %}
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../../../globalmanut/{{ tipo }}/{{ empresa.idempresa }}"><i class="m-r-10 mdi mdi-table-edit">&nbsp;&nbsp;{{ empresa.nome }}</i></a>
+                                        </li>
+                                        {% endfor %}
+                                    {% endif %}
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+       <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">{{ titulo }} </h2>
+                                <p class="pageheader-text"></p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="{% static '../polls/' %}" class="breadcrumb-link">Inicio</a></li>
+                                            {% if tipo == '1' %}
+                                                <li class="breadcrumb-item"><a href="{% url 'carteira' %}" class="breadcrumb-link">Carteira</a></li>
+                                            {% elif tipo == '2'%}
+                                                <li class="breadcrumb-item"><a href="{% url 'devolucao' %}" class="breadcrumb-link">Devolução</a></li>
+                                             {% elif tipo == '3'%}
+                                                <li class="breadcrumb-item"><a href="{% url 'faturamento' %}" class="breadcrumb-link">Faturamento</a></li>
+                                             {% elif tipo == '4'%}
+                                                <li class="breadcrumb-item"><a href="{% url 'prazoentrega' %}" class="breadcrumb-link">Prazo de Entrega</a></li>
+                                             {% elif tipo == '5'%}
+                                                <li class="breadcrumb-item"><a href="{% url 'reprogramacaoretrabalho' %}" class="breadcrumb-link">Reprogramação & Retrabalho</a></li>
+                                            {% elif tipo == '6'%}
+                                                <li class="breadcrumb-item"><a href="{% url 'setor' setor.codigo %}" class="breadcrumb-link">{{ setor.nome }}</a></li>
+                                            {% endif %}
+                                                <li class="breadcrumb-item active" aria-current="page">{{ titulo }}</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="ecommerce-widget">
+                    <div class="row">
+                    <!-- ============================================================== -->
+                    <!-- basic table  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Dados [{{ titulo2 }}]</h5>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered first">
+                                        <thead>
+                                            <tr>
+                                                <th>Data</th>
+                                                <th>Valor</th>
+                                                <th colspan="2" align="center"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for dado in dados_list %}
+                                            <tr>
+                                                <td>{{ dado.data|date:'d/m/Y' }}</td>
+                                                <td>{{ dado.valor|floatformat:2 }}</td>
+                                                <td align="center" width="5%">
+                                                    <a href="{% url 'alteracao_global' tipo dado.id dado.idsec %}" class="badge badge-warning">alterar</a>
+                                                </td>
+                                                <td align="right" width="5%">
+                                                    <a href="{% url 'exclusao_global' tipo dado.id dado.idsec %}" class="badge badge-secondary">excluir</a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Data</th>
+                                                <th>Valor</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end basic table  -->
+                    <!-- ============================================================== -->
+                </div>
+                    </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                             <strong>Copyright &copy; 2020 Pontos de Controle</strong></br>
+			                Desenvolvido por <a href="http://www.cledsonfs.com.br">Cledson Francisco Silva</a>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="http://www.cledsonfs.com.br">Contato</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+<script src="{% static 'polls/assets/vendor/jquery/jquery-3.3.1.min.js'%}"></script>
+    <!-- bootstap bundle js -->
+    <script src="{% static 'polls/assets/vendor/bootstrap/js/bootstrap.bundle.js'%}"></script>
+    <!-- slimscroll js -->
+    <script src="{% static 'polls/assets/vendor/slimscroll/jquery.slimscroll.js'%}"></script>
+    <!-- main js -->
+    <script src="{% static 'polls//libs/js/main-js.js'%}"></script>
+    <!-- chart chartist js -->
+    <script src="{% static 'polls/assets/vendor/charts/chartist-bundle/chartist.min.js'%}"></script>
+    <!-- sparkline js -->
+    <script src="{% static 'polls/assets/vendor/charts/sparkline/jquery.sparkline.js'%}"></script>
+    <!-- morris js -->
+    <script src="{% static 'polls/assets/vendor/charts/morris-bundle/raphael.min.js'%}"></script>
+    <script src="{% static 'polls/assets/vendor/charts/morris-bundle/morris.js'%}"></script>
+    <!-- chart c3 js -->
+    <script src="{% static 'polls/assets/vendor/charts/c3charts/c3.min.js'%}"></script>
+    <script src="{% static 'polls/assets/vendor/charts/c3charts/d3-5.4.0.min.js'%}"></script>
+    <script src="{% static 'polls/assets/vendor/charts/c3charts/C3chartjs.js'%}"></script>
+    <script src="{% static 'polls/assets/libs/js/dashboard-ecommerce.js'%}"></script>
+    <script src="{% static 'polls/assets/vendor/charts/charts-bundle/Chart.bundle.js'%}"></script>
+       <script src="{% static 'polls/assets/vendor/charts/charts-bundle/chartjs.js'%}"></script>
+
+    <script>
+            Morris.Bar({
+                element: 'carteira_bar',
+             hideHover: 'auto',
+                data: [
+
+                   {% for dias in carteira_dias_list %}
+                        { x:'{{ dias.data|date:'j' }}'
+                        {% for empresa in empresa_list%}
+                            {% for dado in carteira_atual_list %}
+                                {% if  dado.idempresa == empresa.idempresa and dado.data|date:'d' == dias.data|date:'d' %}
+                                    ,{{ empresa.apelido }}:{{ dado.carteira|stringformat:'s' }}
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                        },
+                    {% endfor %}
+
+                ],
+
+
+
+                xkey: 'x',
+                ykeys: [
+                {% for emp1 in empresa_list %}
+                    '{{ emp1.apelido}}',
+                {% endfor %}
+                ],
+                labels: [
+                    {% for empresa in empresa_list %}
+                    '{{ empresa.nome }}',
+                    {% endfor %}
+                ],
+                barColors: ['#ff407b', '#25d5f2', '#3CB371','#FFFF00'],
+                resize: false,
+                gridTextSize: '12px'
+
+            });
+
+    </script>
+
+
+</body>
+ 
+</html>
