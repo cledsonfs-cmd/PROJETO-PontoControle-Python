@@ -30,7 +30,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="{% static '../polls/' %}">PONTOS DE CONTROLE</a>
+                <a class="navbar-brand" href="{% static '../' %}">PONTOS DE CONTROLE</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -171,7 +171,7 @@
                                     <ul class="nav flex-column">
                                         {% for anos in devolucao_anos_list  %}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{% static '../polls/devolucao_rel/' %}{{ id }}/{{ anos.ano }}/">{{ anos.ano }}</a>
+                                            <a class="nav-link" href="{% static '../devolucao_rel/' %}{{ id }}/{{ anos.ano }}/">{{ anos.ano }}</a>
                                         </li>
                                         {% endfor %}
                                     </ul>
@@ -203,8 +203,8 @@
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="{% static '../polls/' %}" class="breadcrumb-link">Inicio</a></li>
-                                            <li class="breadcrumb-item"><a href="{% static '../polls/devolucao' %}" class="breadcrumb-link">Devolução</a></li>
+                                            <li class="breadcrumb-item"><a href="{% static '../' %}" class="breadcrumb-link">Inicio</a></li>
+                                            <li class="breadcrumb-item"><a href="{% static '../devolucao' %}" class="breadcrumb-link">Devolução</a></li>
                                             <li class="breadcrumb-item active" aria-current="page">{{ titulo }}</li>
                                         </ol>
                                     </nav>

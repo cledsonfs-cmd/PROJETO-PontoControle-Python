@@ -72,7 +72,7 @@ def index(request):
             'GROUP BY IDEMPRESA',
             translations={'idempresa': 'idempresa', 'valor': 'valor', 'id': 'id'})
 
-        ultimo_dia = calendar.monthlen(2020, 8) + 1
+        ultimo_dia = calendar.monthrange(2020, 8)[1] + 1
         dias_mes_list = []
         for i in range(1, ultimo_dia):
             dias_mes_list.append(i)
@@ -268,7 +268,7 @@ def faturamento(request):
         'WHERE strftime(\'%Y%m\',data)=Strftime(\'%Y%m\',DATE(\'NOW\')) '
         ' group by 1',
         translations={'id': 'id', 'idempresa': 'idempresa', 'valor': 'valor'})
-    ultimo_dia = calendar.monthlen(datetime.datetime.now().year, datetime.datetime.now().month) + 1
+    ultimo_dia = calendar.monthrange(datetime.datetime.now().year, datetime.datetime.now().month)[1] + 1
     dias_mes_list = []
     for i in range(1, ultimo_dia):
         dias_mes_list.append(i)
@@ -333,7 +333,7 @@ def prazoentrega(request):
 
 def producaogeral(request):
     setor_list = Setor.objects.order_by('nome')
-    ultimo_dia = calendar.monthlen(2020, 8) + 1
+    ultimo_dia = calendar.monthrange(2020, 8)[1] + 1
     dias_mes_list = []
     for i in range(1, ultimo_dia):
         dias_mes_list.append(i)
@@ -587,7 +587,7 @@ def setor(request, id):
     setor = Setor.objects.get(codigo=id)
     subsetor_list = SubSetor.objects.filter(idsetor=id).order_by('nome')
     pop_list = POP.objects.filter(codsetor=id).order_by('tarefa')
-    ultimo_dia = calendar.monthlen(2020, 8) + 1
+    ultimo_dia = calendar.monthrange(2020, 8)[1] + 1
     dias_mes_list = []
     for i in range(1, ultimo_dia):
         dias_mes_list.append(i)
@@ -973,7 +973,7 @@ def setor_his(request, id, ano, mes):
     for obj in lista_s:
         if obj.codigo == id:
             setor = obj
-    ultimo_dia = calendar.monthlen(2020, 8) + 1
+    ultimo_dia = calendar.monthrange(2020, 8)[1] + 1
     dias_mes_list = []
     for i in range(1, ultimo_dia):
         dias_mes_list.append(i)
@@ -1209,7 +1209,7 @@ def reprogramacao_his(request, ano, mes):
 def producaogeral_his(request, ano, mes):
     data = datetime.datetime(int(ano), int(mes), 1)
     setor_list = Setor.objects.order_by('nome')
-    ultimo_dia = calendar.monthlen(2020, 8) + 1
+    ultimo_dia = calendar.monthrange(2020, 8)[1] + 1
     dias_mes_list = []
     for i in range(1, ultimo_dia):
         dias_mes_list.append(i)
@@ -1287,7 +1287,7 @@ def faturamento_his(request, ano, mes):
                                                  'and strftime(\'%m\',data)=\'' + mes + '\' '
                                                                                         ' group by 1',
         translations={'id': 'id', 'idempresa': 'idempresa', 'valor': 'valor'})
-    ultimo_dia = calendar.monthlen(datetime.datetime.now().year, datetime.datetime.now().month) + 1
+    ultimo_dia = calendar.monthrange(datetime.datetime.now().year, datetime.datetime.now().month)[1] + 1
     dias_mes_list = []
     for i in range(1, ultimo_dia):
         dias_mes_list.append(i)
