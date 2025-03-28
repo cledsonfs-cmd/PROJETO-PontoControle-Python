@@ -28,9 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://frontend-ponto-controle-python-app.91nf5v.easypanel.host',
-    'localhost',
-    '127.0.0.1',
+    'https://frontend-ponto-controle-python-app.91nf5v.easypanel.host'
 ]
 
 
