@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: "ponto-controle-app"
+    image: ponto-controle-app:8090/ponto-controle-app
+    build:
+      context: .  # Usa o Dockerfile no diretório atual
+      dockerfile: Dockerfile
+    ports:
+      - "8093:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
